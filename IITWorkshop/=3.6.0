@@ -1,0 +1,3 @@
+Requirement already satisfied: protobuf in /anaconda3/lib/python3.7/site-packages (3.9.1)
+Requirement already satisfied: setuptools in /anaconda3/lib/python3.7/site-packages (from protobuf) (41.0.1)
+Requirement already satisfied: six>=1.9 in /anaconda3/lib/python3.7/site-packages (from protobuf) (1.12.0)

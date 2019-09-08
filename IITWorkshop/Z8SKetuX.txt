@@ -1,0 +1,28 @@
+data = pd.read_csv('E:/ML_Codes/Advertising/advertising.csv', index_col = 0)
+
+data.head(4)
+
+X=data[['TV']].values
+Y=data[['sales']].values
+
+plt.scatter(X,Y)
+plt.show()
+
+n = 200
+alpha = 0.0001
+
+a0 = np.zeros((n,1))
+a1 = np.zeros((200,1))
+
+
+epochs = 0
+while(epochs<180):
+    y_t = a0 + a1 * X
+    error = Y - y_t
+    mean_sq_er = np.sum(error ** 2)
+    mean_sq_er = mean_sq_er/n
+    a0 = a0 - alpha * 2 * np.sum(error) / n
+    a1 = a1 - alpha * 2 * np.sum(error * X)/n
+    epochs += 1
+    if (epochs%10 == 0):
+        print(mean_sq_er)
